@@ -1,9 +1,12 @@
 package io.store.grocery.delivery;
 
-//@SpringBootTest
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
 class GroceryDeliveryServiceApplicationTests {
 
-	// @Test
+	@Test
 	void contextLoads() {
 	}
 
