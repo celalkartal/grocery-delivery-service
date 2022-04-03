@@ -1,0 +1,45 @@
+type Query {
+ findDeliveriesByStatus(trackingStatus: TrackingStatus!): [FindAllDeliveryResponse]
+}
+
+type Mutation {
+ updateDelivery(deliveryUpdateRequest: DeliveryUpdateRequest!): DeliveryUpdateResponse
+}
+
+type FindAllDeliveryResponse {
+ deliveryId: String
+ product: String
+ quantity: Int
+ supplier: String
+ expectedDate: String
+ expectedWarehouse: String
+ tracking: Tracking
+}
+
+type DeliveryUpdateResponse {
+ deliveryId: String
+ product: String
+ quantity: Int
+ supplier: String
+ expectedDate: String
+ expectedWarehouse: String
+ tracking: Tracking
+ responseCode: String
+ responseMsg: String
+}
+
+input DeliveryUpdateRequest {
+ deliveryId: String!
+ trackingStatus: TrackingStatus!
+}
+
+type Tracking {
+ status: TrackingStatus!
+ receivedDate: String
+}
+
+enum TrackingStatus {
+	EXPECTED, RECEIVED
+}
+
+
